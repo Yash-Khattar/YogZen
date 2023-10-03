@@ -11,11 +11,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List yogaList = [
-    YogaCard(),
-    YogaCard(),
-    YogaCard(),
-    YogaCard(),
-    YogaCard(),
+    const YogaCard(),
+    const YogaCard(),
+    const YogaCard(),
+    const YogaCard(),
+    const YogaCard(),
   ];
 
   @override
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: kdarkBlue,
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                       ),
-                      SizedBox(height: 6),
+                      const SizedBox(height: 6),
                       Align(
                         alignment: Alignment.centerRight,
                         child: Expanded(
