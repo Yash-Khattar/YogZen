@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:yogzen/global/color.dart';
 import 'package:yogzen/screens/community/community_screen.dart';
 import 'package:yogzen/screens/home/home.dart';
+import 'package:yogzen/screens/user_profile/user_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
               color: kblackHeading,
             ),
           )),
-      home: const CommunityScreen(),
+      home: const HomeScreen(),
     );
   }
 }
