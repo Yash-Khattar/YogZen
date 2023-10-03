@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yogzen/global/color.dart';
 import 'package:yogzen/screens/home/components/yoga_card.dart';
+import 'package:yogzen/screens/user_profile/user_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,11 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(top: 10),
                   child: Row(
                     children: [
-                      const CircleAvatar(
-                        radius: 32,
-                        backgroundColor: kdarkBlue,
-                        // backgroundImage: AssetImage('assets/images/avatar.png'),
-                      ),
+                      IconButton(
+                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: ((context) => userPageScreen()),)),
+                        icon: Icon(FontAwesomeIcons.solidCircleUser,
+                        size: 55,),
+                        ),
                       const SizedBox(width: 12),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
