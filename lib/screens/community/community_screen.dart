@@ -13,45 +13,45 @@ class CommunityScreen extends StatefulWidget {
 class _CommunityScreenState extends State<CommunityScreen> {
   List yogGuruList = [
     "Nidhi",
-    "Nidhi",
-    "Nidhi",
-    "Nidhi",
-    "Nidhi",
-    "Nidhi",
-    "Nidhi",
+    "Kavita",
+    "Arjun",
+    "Neha",
+    "Aditya",
+    "Aishwarya",
+    "Ananya",
   ];
 
   List postCardList = [
     PostCard(
-      postImage: "assets/p1.jpg",
+      postImage: "assets/community_posts/p1.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p2.jpg",
+      postImage: "assets/community_posts/p2.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p3.jpg",
+      postImage: "assets/community_posts/p3.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p4.jpg",
+      postImage: "assets/community_posts/p4.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p5.jpg",
+      postImage: "assets/community_posts/p5.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p6.jpg",
+      postImage: "assets/community_posts/p6.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p7.jpg",
+      postImage: "assets/community_posts/p7.jpg",
       desc: '',
     ),
     PostCard(
-      postImage: "assets/p8.jpg",
+      postImage: "assets/community_posts/p8.jpg",
       desc: '',
     ),
   ];
@@ -93,7 +93,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
                                   Icons.person,
                                   size: 40,
                                   color: Colors.white54,
-                                  ),
+                                ),
                                 radius: 32,
                                 backgroundColor: kdarkBlue,
                                 // backgroundImage: AssetImage('assets/images/avatar.png'),

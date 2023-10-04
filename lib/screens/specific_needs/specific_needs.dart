@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yogzen/screens/specific_needs/components/recommended_card.dart';
 
 import '../home/components/yoga_card.dart';
 import '../../components/nav_bar.dart';
@@ -13,6 +14,29 @@ class SpecificNeeds extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
 
+    List recommendedCardList = [
+      RecommendedCard(
+        postYoga: "assets/yoga/yoga1.webp",
+        des: 'Buddha konasana',
+      ),
+      RecommendedCard(
+        postYoga: "assets/yoga/yoga2.webp",
+        des: 'Sirsasana',
+      ),
+      RecommendedCard(
+        postYoga: "assets/yoga/yoga3.webp",
+        des: 'Upavistha Konasana',
+      ),
+      RecommendedCard(
+        postYoga: "assets/yoga/yoga4.webp",
+        des: 'Adho Mukha Svanasana',
+      ),
+      RecommendedCard(
+        postYoga: "assets/yoga/yoga5.webp",
+        des: 'Tadasana',
+      ),
+    ];
+
     return Scaffold(
       backgroundColor: klightBlue,
       body: SafeArea(
@@ -22,9 +46,8 @@ class SpecificNeeds extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Health",
-                    style: Theme.of(context).textTheme.displayLarge),
-                SizedBox(
+                Text("Health", style: Theme.of(context).textTheme.displayLarge),
+                const SizedBox(
                   height: 20,
                 ),
                 Container(
@@ -32,7 +55,7 @@ class SpecificNeeds extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(8),
                     boxShadow: [
-                      BoxShadow(
+                      const BoxShadow(
                           offset: Offset(0, 4),
                           blurRadius: 4,
                           color: Colors.black12),
@@ -49,7 +72,7 @@ class SpecificNeeds extends StatelessWidget {
                           Icons.search,
                           color: kblackSubHeading.withOpacity(0.5),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
                         Text(
@@ -62,50 +85,48 @@ class SpecificNeeds extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 32,
                 ),
                 Text(
                   "Following",
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
                 Container(
-                  height: 146, // height * 0.19
+                  height: 152, // height * 0.19
                   child: ListView.builder(
                     itemBuilder: (context, index) {
-                      return YogaCard(
+                      return const YogaCard(
                         postYoga: "assets/yoga/yoga3.webp",
                         des: 'Upavistha Konasana',
                       );
                     },
                     itemCount: 4,
                     scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 32,
                 ),
                 Text(
                   "Recommended",
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 12,
                 ),
-                Column(
-                  children: List.generate(
-                    4,
-                    (index) => Padding(
-                      padding: const EdgeInsets.only(bottom: 30),
-                      child: YogaCard(
-                        postYoga: "assets/yoga/yoga4.webp",
-                        des: 'Adho Mukha Svanasana',
-                      ),
-                    ),
-                  ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: recommendedCardList.length,
+                  itemBuilder: (context, index) {
+                    return 
+                    
+                    recommendedCardList[index];
+                  },
                 ),
               ],
             ),

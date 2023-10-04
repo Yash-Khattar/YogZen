@@ -3,11 +3,11 @@ import 'package:yogzen/global/color.dart';
 import 'package:yogzen/screens/yoga/yoga_tutorial.dart';
 import 'package:yogzen/screens/home/home.dart';
 
-class YogaCard extends StatelessWidget {
+class RecommendedCard extends StatelessWidget {
   final String postYoga;
   final String des;
 
-  const YogaCard({required this.postYoga, required this.des});
+  const RecommendedCard({required this.postYoga, required this.des});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,13 @@ class YogaCard extends StatelessWidget {
         ));
       },
       child: Container(
-        padding: EdgeInsets.only(right: 16),
+        padding: EdgeInsets.only(right: 16, bottom: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 120,
-              width: 200,
+              height: 160,
+              width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
