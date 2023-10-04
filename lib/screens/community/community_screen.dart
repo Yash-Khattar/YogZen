@@ -3,6 +3,7 @@ import "package:yogzen/global/color.dart";
 import "package:yogzen/screens/community/components/post_card.dart";
 
 class CommunityScreen extends StatefulWidget {
+  static const routeName = "/communityScreen";
   const CommunityScreen({super.key});
 
   @override
@@ -38,14 +39,13 @@ class _CommunityScreenState extends State<CommunityScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 16),
+            padding: const EdgeInsets.fromLTRB(16, 16, 0, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 10),
                 Text(
                   "Community",
-                  style: Theme.of(context).textTheme.headlineLarge,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
 
                 //Yog Gurus

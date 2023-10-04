@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yogzen/global/color.dart';
 
 class userPageScreen extends StatelessWidget {
+  static const routeName = "/userPageScreen";
   const userPageScreen({super.key});
 
   @override
@@ -198,35 +199,38 @@ class userPageScreen extends StatelessWidget {
                     const SizedBox(
                       height: 5,
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: kdarkBlue,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: kdarkBlue,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: kdarkBlue,
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundColor: kdarkBlue,
-                        ),
-                      ],
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 35,
+                            backgroundColor: kdarkBlue,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          CircleAvatar(
+                            radius: 35,
+                            backgroundColor: kdarkBlue,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          CircleAvatar(
+                            radius: 35,
+                            backgroundColor: kdarkBlue,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          CircleAvatar(
+                            radius: 35,
+                            backgroundColor: kdarkBlue,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
