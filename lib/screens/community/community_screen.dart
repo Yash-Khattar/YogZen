@@ -89,6 +89,11 @@ class _CommunityScreenState extends State<CommunityScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const CircleAvatar(
+                                child: Icon(
+                                  Icons.person,
+                                  size: 40,
+                                  color: Colors.white54,
+                                  ),
                                 radius: 32,
                                 backgroundColor: kdarkBlue,
                                 // backgroundImage: AssetImage('assets/images/avatar.png'),

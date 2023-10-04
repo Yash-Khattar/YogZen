@@ -33,6 +33,11 @@ class _PostCardState extends State<PostCard> {
                     const Padding(
                       padding: EdgeInsets.all(12.0),
                       child: CircleAvatar(
+                        child: Icon(
+                                  Icons.person,
+                                  size: 40,
+                                  color: Colors.white54,
+                                  ),
                         backgroundColor: kdarkBlue,
                         radius: 26,
                       ),

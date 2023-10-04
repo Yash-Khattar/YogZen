@@ -76,7 +76,10 @@ class SpecificNeeds extends StatelessWidget {
                   height: 146, // height * 0.19
                   child: ListView.builder(
                     itemBuilder: (context, index) {
-                      return YogaCard();
+                      return YogaCard(
+                        postYoga: "assets/yoga/yoga3.webp",
+                        des: 'Upavistha Konasana',
+                      );
                     },
                     itemCount: 4,
                     scrollDirection: Axis.horizontal,
@@ -98,6 +101,8 @@ class SpecificNeeds extends StatelessWidget {
                     (index) => Padding(
                       padding: const EdgeInsets.only(bottom: 30),
                       child: YogaCard(
+                        postYoga: "assets/yoga/yoga4.webp",
+                        des: 'Adho Mukha Svanasana',
                       ),
                     ),
                   ),

@@ -33,7 +33,7 @@ class userPageScreen extends StatelessWidget {
               ),
               Container(
                 child: const Text(
-                  'Harsh Tiwari',
+                  'Yash khattar',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
@@ -42,7 +42,7 @@ class userPageScreen extends StatelessWidget {
               ),
               Container(
                 child: const Text(
-                  'tiwariharsh1408@gmail.com',
+                  'yashkhattar73@gmail.com',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       //fontSize: 20,

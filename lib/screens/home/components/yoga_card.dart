@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:yogzen/global/color.dart';
 import 'package:yogzen/screens/yoga/yoga_tutorial.dart';
+import 'package:yogzen/screens/home/home.dart';
 
 class YogaCard extends StatelessWidget {
-  const YogaCard({super.key});
+
+  final String postYoga;
+  final String des;
+
+  const YogaCard({required this.postYoga, required this.des});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +30,21 @@ class YogaCard extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Center(child: Text("Image")),
+              child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+              child: Image.asset(
+                      postYoga,
+                      fit: BoxFit.cover,
+                    ),
             ),
-            const SizedBox(height: 6),
+            ),
+            SizedBox(height: 5,),  
             Text(
-              "Yoga Name",
-              style: TextStyle(color: kblackSubHeading),
-            ),
+              des,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+              ),
           ],
         ),
       ),

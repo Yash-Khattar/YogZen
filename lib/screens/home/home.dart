@@ -15,11 +15,26 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List yogaList = [
-    const YogaCard(),
-    const YogaCard(),
-    const YogaCard(),
-    const YogaCard(),
-    const YogaCard(),
+    YogaCard(
+      postYoga: "assets/yoga/yoga1.webp",
+      des: 'Buddha konasana',
+    ),
+    YogaCard(
+      postYoga: "assets/yoga/yoga2.webp",
+      des: 'Sirsasana',
+    ),
+    YogaCard(
+      postYoga: "assets/yoga/yoga3.webp",
+      des: 'Upavistha Konasana',
+    ),
+    YogaCard(
+      postYoga: "assets/yoga/yoga4.webp",
+      des: 'Adho Mukha Svanasana',
+    ),
+    YogaCard(
+      postYoga: "assets/yoga/yoga5.webp",
+      des: 'Tadasana',
+    ),
   ];
 
   @override
