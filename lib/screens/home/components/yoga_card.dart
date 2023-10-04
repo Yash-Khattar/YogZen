@@ -6,15 +6,19 @@ import 'package:yogzen/screens/home/home.dart';
 class YogaCard extends StatelessWidget {
   final String postYoga;
   final String des;
+  final String url;
 
-  const YogaCard({required this.postYoga, required this.des});
+  const YogaCard(
+      {required this.postYoga, required this.des, required this.url});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: ((context) => YogaTutorial()),
+          builder: ((context) => YogaTutorial(
+                url: url,
+              )),
         ));
       },
       child: Container(

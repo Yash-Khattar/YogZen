@@ -7,35 +7,68 @@ import '../../global/color.dart';
 
 class SpecificNeeds extends StatelessWidget {
   static const routeName = "/specificNeeds";
-  const SpecificNeeds({super.key});
+  SpecificNeeds({Key? key}) : super(key: key);
+
+  List recommendedCardList = [
+     const RecommendedCard(
+      postYoga: "assets/yoga/yoga1.webp",
+      des: 'Buddha konasana',
+      url: 'https://youtu.be/YXOeBUjmERI?si=pHkw5tcXLS7XU8oH',
+    ),
+    const RecommendedCard(
+      postYoga: "assets/yoga/yoga2.webp",
+      des: 'Sirsasana',
+      url: 'https://youtu.be/8NGAIZ0muIY?si=Zb0DncOUaNr9lTgZ',
+    ),
+    const RecommendedCard(
+      postYoga: "assets/yoga/yoga3.webp",
+      des: 'Upavistha Konasana',
+      url: 'https://youtu.be/YtjKXDHd5hU?si=uXslaQ0ww4Y51NA7',
+    ),
+    const RecommendedCard(
+      postYoga: "assets/yoga/yoga4.webp",
+      des: 'Adho Mukha Svanasana',
+      url: 'https://youtu.be/6Ep5VzGqDRU?si=exN5SjZ0mYPXwlpf',
+    ),
+    const RecommendedCard(
+      postYoga: "assets/yoga/yoga5.webp",
+      des: 'Tadasana',
+      url: 'https://youtu.be/6TUS8UwfCO0?si=h0vUoQf-tBA-F1X2',
+    ),
+  ];
+
+List yogaList = [
+    const YogaCard(
+      postYoga: "assets/yoga/yoga1.webp",
+      des: 'Buddha konasana',
+      url: 'https://youtu.be/YXOeBUjmERI?si=pHkw5tcXLS7XU8oH',
+    ),
+    const YogaCard(
+      postYoga: "assets/yoga/yoga2.webp",
+      des: 'Sirsasana',
+      url: 'https://youtu.be/8NGAIZ0muIY?si=Zb0DncOUaNr9lTgZ',
+    ),
+    const YogaCard(
+      postYoga: "assets/yoga/yoga3.webp",
+      des: 'Upavistha Konasana',
+      url: 'https://youtu.be/YtjKXDHd5hU?si=uXslaQ0ww4Y51NA7',
+    ),
+    const YogaCard(
+      postYoga: "assets/yoga/yoga4.webp",
+      des: 'Adho Mukha Svanasana',
+      url: 'https://youtu.be/6Ep5VzGqDRU?si=exN5SjZ0mYPXwlpf',
+    ),
+    const YogaCard(
+      postYoga: "assets/yoga/yoga5.webp",
+      des: 'Tadasana',
+      url: 'https://youtu.be/6TUS8UwfCO0?si=h0vUoQf-tBA-F1X2',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-
-    List recommendedCardList = [
-      RecommendedCard(
-        postYoga: "assets/yoga/yoga1.webp",
-        des: 'Buddha konasana',
-      ),
-      RecommendedCard(
-        postYoga: "assets/yoga/yoga2.webp",
-        des: 'Sirsasana',
-      ),
-      RecommendedCard(
-        postYoga: "assets/yoga/yoga3.webp",
-        des: 'Upavistha Konasana',
-      ),
-      RecommendedCard(
-        postYoga: "assets/yoga/yoga4.webp",
-        des: 'Adho Mukha Svanasana',
-      ),
-      RecommendedCard(
-        postYoga: "assets/yoga/yoga5.webp",
-        des: 'Tadasana',
-      ),
-    ];
 
     return Scaffold(
       backgroundColor: klightBlue,
@@ -99,10 +132,7 @@ class SpecificNeeds extends StatelessWidget {
                   height: 152, // height * 0.19
                   child: ListView.builder(
                     itemBuilder: (context, index) {
-                      return const YogaCard(
-                        postYoga: "assets/yoga/yoga3.webp",
-                        des: 'Upavistha Konasana',
-                      );
+                      return yogaList[index];
                     },
                     itemCount: 4,
                     scrollDirection: Axis.horizontal,
@@ -123,9 +153,7 @@ class SpecificNeeds extends StatelessWidget {
                   shrinkWrap: true,
                   itemCount: recommendedCardList.length,
                   itemBuilder: (context, index) {
-                    return 
-                    
-                    recommendedCardList[index];
+                    return recommendedCardList[index];
                   },
                 ),
               ],
