@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yogzen/global/color.dart';
-import 'package:yogzen/screens/home/components/yoga_card.dart';
 import 'package:yogzen/screens/user_profile/user_page.dart';
 
+import '../../components/yoga_card.dart';
+
 class HomeScreen extends StatefulWidget {
+  static const routeName = "/homeScreen";
   const HomeScreen({super.key});
 
   @override
@@ -115,15 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(8)),
                       ),
                       const SizedBox(height: 6),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Expanded(
-                          child: Text(
-                            "21/30 days",
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                                color: kblackSubHeading, fontSize: 12),
-                          ),
+                      Container(
+                        width: double.infinity,
+                        child: Text(
+                          "21/30 days",
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              color: kblackSubHeading, fontSize: 12),
                         ),
                       ),
                     ],
