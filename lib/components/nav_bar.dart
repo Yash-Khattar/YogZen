@@ -47,17 +47,21 @@ class _NavBarState extends State<NavBar> {
               IconButton(
                 onPressed: () => widget.change(0),
                 icon: Icon(
-                  Icons.home,
+                  Icons.home_rounded,
                   size: 30,
-                  color: widget.idx == 0 ? kdarkBlue : kblackSubHeading.withOpacity(0.5),
+                  color: widget.idx == 0
+                      ? kdarkBlue
+                      : kblackSubHeading.withOpacity(0.3),
                 ),
               ),
               IconButton(
-                onPressed:() => widget.change(1),
+                onPressed: () => widget.change(1),
                 icon: Icon(
-                  Icons.find_in_page,
+                  Icons.health_and_safety_rounded,
                   size: 30,
-                  color: widget.idx == 1 ? kdarkBlue : kblackSubHeading.withOpacity(0.5),
+                  color: widget.idx == 1
+                      ? kdarkBlue
+                      : kblackSubHeading.withOpacity(0.3),
                 ),
               ),
               SizedBox(
@@ -68,7 +72,9 @@ class _NavBarState extends State<NavBar> {
                 icon: Icon(
                   Icons.people_outlined,
                   size: 30,
-                  color: widget.idx == 2 ? kdarkBlue : kblackSubHeading.withOpacity(0.5),
+                  color: widget.idx == 2
+                      ? kdarkBlue
+                      : kblackSubHeading.withOpacity(0.3),
                 ),
               ),
               IconButton(
@@ -76,7 +82,9 @@ class _NavBarState extends State<NavBar> {
                 icon: Icon(
                   Icons.person,
                   size: 30,
-                  color: widget.idx == 3 ? kdarkBlue : kblackSubHeading.withOpacity(0.5),
+                  color: widget.idx == 3
+                      ? kdarkBlue
+                      : kblackSubHeading.withOpacity(0.3),
                 ),
               ),
             ],
@@ -85,8 +93,8 @@ class _NavBarState extends State<NavBar> {
         Positioned(
           child: HexagonWidget(),
           top: -30,
-          left: width/2 - 30,
-          right: width/2 - 30,
+          left: width / 2 - 30,
+          right: width / 2 - 30,
         )
       ],
     );
