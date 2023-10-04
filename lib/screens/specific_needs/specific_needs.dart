@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../components/yoga_card.dart';
+import '../home/components/yoga_card.dart';
 import '../../components/nav_bar.dart';
 import '../../global/color.dart';
 

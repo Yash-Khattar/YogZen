@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:yogzen/global/color.dart';
 import 'package:yogzen/screens/user_profile/user_page.dart';
 
-import '../../components/yoga_card.dart';
+import 'components/yoga_card.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = "/homeScreen";
