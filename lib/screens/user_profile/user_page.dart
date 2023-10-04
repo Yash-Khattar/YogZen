@@ -199,38 +199,26 @@ class userPageScreen extends StatelessWidget {
                     const SizedBox(
                       height: 5,
                     ),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircleAvatar(
-                            radius: 35,
-                            backgroundColor: kdarkBlue,
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          CircleAvatar(
-                            radius: 35,
-                            backgroundColor: kdarkBlue,
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          CircleAvatar(
-                            radius: 35,
-                            backgroundColor: kdarkBlue,
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          CircleAvatar(
-                            radius: 35,
-                            backgroundColor: kdarkBlue,
-                          ),
-                        ],
-                      ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        CircleAvatar(
+                          radius: 35,
+                          backgroundColor: kdarkBlue,
+                        ),
+                        CircleAvatar(
+                          radius: 35,
+                          backgroundColor: kdarkBlue,
+                        ),
+                        CircleAvatar(
+                          radius: 35,
+                          backgroundColor: kdarkBlue,
+                        ),
+                        CircleAvatar(
+                          radius: 35,
+                          backgroundColor: kdarkBlue,
+                        ),
+                      ],
                     ),
                   ],
                 ),

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:yogzen/global/color.dart';
 
 class PostCard extends StatefulWidget {
-  const PostCard({super.key});
+  final String postImage;
+  final String desc;
+  const PostCard({Key? key, required this.postImage, required this.desc})
+      : super(key: key);
 
   @override
   State<PostCard> createState() => _PostCardState();
@@ -61,12 +64,18 @@ class _PostCardState extends State<PostCard> {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Container(
-                width: double.infinity,
-                height: 280,
-                decoration: const BoxDecoration(
-                    color: kdarkBlue,
-                    borderRadius: BorderRadius.all(Radius.circular(16))),
-              ),
+                  width: double.infinity,
+                  height: 280,
+                  decoration: const BoxDecoration(
+                      color: kdarkBlue,
+                      borderRadius: BorderRadius.all(Radius.circular(16))),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    child: Image.asset(
+                      widget.postImage,
+                      fit: BoxFit.cover,
+                    ),
+                  )),
             ),
             const Padding(
               padding: EdgeInsets.all(12.0),

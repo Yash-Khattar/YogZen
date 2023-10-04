@@ -22,14 +22,38 @@ class _CommunityScreenState extends State<CommunityScreen> {
   ];
 
   List postCardList = [
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
-    PostCard(),
+    PostCard(
+      postImage: "assets/p1.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p2.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p3.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p4.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p5.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p6.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p7.jpg",
+      desc: '',
+    ),
+    PostCard(
+      postImage: "assets/p8.jpg",
+      desc: '',
+    ),
   ];
 
   @override
