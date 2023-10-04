@@ -22,7 +22,7 @@ class WelcomeScreen extends StatelessWidget {
                 height: 30,
               ),
               Text(
-                'AI Enables yoga app for all your ',
+                'AI enabled yoga app for all your ',
                 style: TextStyle(color: kblackSubHeading),
               ),
               Text(
