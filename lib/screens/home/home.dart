@@ -15,25 +15,30 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List yogaList = [
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga1.webp",
       des: 'Buddha konasana',
+      url: 'https://youtu.be/YXOeBUjmERI?si=pHkw5tcXLS7XU8oH',
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga2.webp",
       des: 'Sirsasana',
+      url: 'https://youtu.be/8NGAIZ0muIY?si=Zb0DncOUaNr9lTgZ',
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga3.webp",
       des: 'Upavistha Konasana',
+      url: 'https://youtu.be/YtjKXDHd5hU?si=uXslaQ0ww4Y51NA7',
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga4.webp",
       des: 'Adho Mukha Svanasana',
+      url: 'https://youtu.be/6Ep5VzGqDRU?si=exN5SjZ0mYPXwlpf',
     ),
-    YogaCard(
+    const YogaCard(
       postYoga: "assets/yoga/yoga5.webp",
       des: 'Tadasana',
+      url: 'https://youtu.be/6TUS8UwfCO0?si=h0vUoQf-tBA-F1X2',
     ),
   ];
 
@@ -54,10 +59,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     children: [
                       IconButton(
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: ((context) => userPageScreen()),)),
-                        icon: Icon(FontAwesomeIcons.solidCircleUser,
-                        size: 55,),
+                        onPressed: () =>
+                            Navigator.of(context).push(MaterialPageRoute(
+                          builder: ((context) => const userPageScreen()),
+                        )),
+                        icon: const Icon(
+                          FontAwesomeIcons.solidCircleUser,
+                          size: 55,
                         ),
+                      ),
                       const SizedBox(width: 12),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,8 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text(
                           "21/30 days",
                           textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: kblackSubHeading, fontSize: 12),
+                          style:
+                              TextStyle(color: kblackSubHeading, fontSize: 12),
                         ),
                       ),
                     ],
