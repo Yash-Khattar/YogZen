@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:yogzen/global/color.dart';
 
 class YogaCard extends StatelessWidget {
-  final double height;
-  final double width;
-  const YogaCard({super.key, this.height = 120.0, this.width = 200.0});
+
+  const YogaCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +13,8 @@ class YogaCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: height,
-            width: width,
+            height: 120,
+            width: 200,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(8),

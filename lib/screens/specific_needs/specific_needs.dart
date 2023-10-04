@@ -98,8 +98,6 @@ class SpecificNeeds extends StatelessWidget {
                     (index) => Padding(
                       padding: const EdgeInsets.only(bottom: 30),
                       child: YogaCard(
-                        height: 150,
-                        width: (width - 32),
                       ),
                     ),
                   ),
