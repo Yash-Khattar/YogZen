@@ -20,13 +20,14 @@ class userPageScreen extends StatelessWidget {
               Center(
                 child: CircleAvatar(
                   //foregroundImage: ,
-                  backgroundColor: Colors.grey.shade200,
+                  // backgroundColor: Colors.grey.shade200,
+                  backgroundImage: AssetImage('assets/profile.png'),
                   radius: height * 0.08,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.blue.shade200,
-                    size: height * 0.12,
-                  ),
+                  // child: Icon(
+                  //   Icons.person,
+                  //   color: Colors.blue.shade200,
+                  //   size: height * 0.12,
+                  // ),
                 ),
               ),
               const SizedBox(

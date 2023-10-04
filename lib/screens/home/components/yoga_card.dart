@@ -7,18 +7,18 @@ class YogaCard extends StatelessWidget {
   final String postYoga;
   final String des;
   final String url;
+  final List steps;
 
   const YogaCard(
-      {required this.postYoga, required this.des, required this.url});
+      {required this.postYoga, required this.des, required this.url, required this.steps});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
-          builder: ((context) => YogaTutorial(
-                url: url,
-              )),
+          builder: ((context) =>
+              YogaTutorial(url: url, steps: steps, des: des)),
         ));
       },
       child: Container(

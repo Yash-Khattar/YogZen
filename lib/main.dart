@@ -6,6 +6,7 @@ import 'package:yogzen/screens/community/community_screen.dart';
 import 'package:yogzen/screens/home/home.dart';
 import 'package:yogzen/screens/specific_needs/specific_needs.dart';
 import 'package:yogzen/screens/user_profile/user_page.dart';
+import 'package:yogzen/screens/welcome/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           textTheme: TextTheme(
             displayLarge: TextStyle(
-              fontSize: 28,
+              fontSize: 24,
               fontWeight: FontWeight.w600,
               color: kblackHeading,
             ),
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
               color: kblackHeading,
             ),
           )),
-      home: const NavScreen(),
+      home: const WelcomeScreen(),
       routes: {
         NavScreen.routeName: (context) => NavScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),

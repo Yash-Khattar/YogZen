@@ -7,9 +7,10 @@ class RecommendedCard extends StatelessWidget {
   final String postYoga;
   final String des;
   final String url;
+  final List steps;
 
-  const RecommendedCard(
-      {required this.postYoga, required this.des, required this.url});
+  RecommendedCard(
+      {required this.postYoga, required this.des, required this.url, required this.steps});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class RecommendedCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: ((context) => YogaTutorial(
+                steps: steps,
                 url: url,
+                des: des,
               )),
         ));
       },
