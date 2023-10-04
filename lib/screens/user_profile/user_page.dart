@@ -10,6 +10,7 @@ class userPageScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: klightBlue,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
@@ -166,9 +167,13 @@ class userPageScreen extends StatelessWidget {
                         width: double.infinity,
                         height: 200,
                         decoration: const BoxDecoration(
-                            color: kdarkBlue,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(16))),
+                          color: kdarkBlue,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(16),
+                          ),
+                          boxShadow: [BoxShadow(blurRadius: 4, offset: Offset(0, 4), color: Colors.black12)],
+                          image: DecorationImage(image: AssetImage("assets/user/Figure_1.jpeg"), fit: BoxFit.fill)
+                        ),
                       ),
                     ),
                   ],
