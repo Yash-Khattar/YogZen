@@ -156,10 +156,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       children: [
                         IconButton(
-                          onPressed: () =>
-                              Navigator.of(context).push(MaterialPageRoute(
-                            builder: ((context) => const userPageScreen()),
-                          )),
+                          onPressed: () {},
+                          //     Navigator.of(context).push(MaterialPageRoute(
+                          //   builder: ((context) => const userPageScreen()),
+                          // )),
                           icon: CircleAvatar(
                             backgroundImage: Image.asset(
                               "assets/profile.png",
@@ -175,7 +175,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Row(
                               children: [
-                                
                                 Text(
                                   'Hello, Yash👋',
                                   style: TextStyle(
@@ -378,9 +377,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.black26,
                     shape: BoxShape.circle,
                   ),
-                  child: Center(
-                    child: Text("LOGO"),
-                  ),
+                  child: Image.asset("assets/logo.png"),
                 ),
                 ListTile(
                   onTap: () {},
