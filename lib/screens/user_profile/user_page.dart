@@ -139,7 +139,7 @@ class userPageScreen extends StatelessWidget {
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                           Text(
-                            'Tues',
+                            'Tue',
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                           Text(
@@ -147,7 +147,7 @@ class userPageScreen extends StatelessWidget {
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                           Text(
-                            'Thur',
+                            'Thu',
                             style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                           Text(
@@ -167,13 +167,19 @@ class userPageScreen extends StatelessWidget {
                         width: double.infinity,
                         height: 200,
                         decoration: const BoxDecoration(
-                          color: kdarkBlue,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(16),
-                          ),
-                          boxShadow: [BoxShadow(blurRadius: 4, offset: Offset(0, 4), color: Colors.black12)],
-                          image: DecorationImage(image: AssetImage("assets/user/Figure_1.jpeg"), fit: BoxFit.fill)
-                        ),
+                            color: kdarkBlue,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(16),
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                  color: Colors.black12)
+                            ],
+                            image: DecorationImage(
+                                image: AssetImage("assets/graph.png"),
+                                fit: BoxFit.fill)),
                       ),
                     ),
                   ],
