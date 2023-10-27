@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Future<String> fetchYogaPose() async {
-    final String apiKey = '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';
+    final String apiKey = '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';
     final String apiUrl = 'https://api.openai.com/v1/engines/davinci/completions';
 
     final Map<String, String> headers = {
@@ -10,11 +10,11 @@ Future<String> fetchYogaPose() async {
       'Authorization': 'Bearer $apiKey',
     };
 
-  final String prompt = 'Generate a yoga pose and provide step-by-step instructions on how to perform it.';
+  final String prompt = 'Generate a yoga pose and provide step-by-step instructions on how to perform it in points.';
 
     final Map<String, dynamic> data = {
       'prompt': prompt,
-      'max_tokens': 100,
+      'max_tokens': 500,
     };
 
     final response = await http.post(
