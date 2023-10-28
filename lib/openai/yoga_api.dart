@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:yogzen/global/key.dart';
 
-Future<List<String>> fetchYogaPose() async {
+Future<List<String>> fetchYogaPose(String name) async {
     
     final String apiUrl = 'https://api.openai.com/v1/engines/text-davinci-003/completions?tempature=0.3';
 
@@ -11,7 +11,7 @@ Future<List<String>> fetchYogaPose() async {
       'Authorization': 'Bearer $apiKey',
     };
 
-  final String prompt = 'Give me steps for Tadasan in points.';
+  final String prompt = 'Give me steps for $name in points.';
 
     final Map<String, dynamic> data = {
       'prompt': prompt,
@@ -38,6 +38,9 @@ Future<List<String>> fetchYogaPose() async {
       final String yogaPoseInstructions = responseData['choices'][0]['text'];
       List<String> steps = yogaPoseInstructions.split("\n");
       steps.removeWhere((element) => element == "");
+      for(int i = 0; i < steps.length; i++){
+        steps[i] = steps[i].substring(3);
+      }
       // print(steps);
       return steps;
     } else {

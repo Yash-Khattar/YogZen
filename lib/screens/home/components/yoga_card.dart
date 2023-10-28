@@ -7,10 +7,10 @@ class YogaCard extends StatelessWidget {
   final String postYoga;
   final String des;
   final String url;
-  final List steps;
+  final String name;
 
   const YogaCard(
-      {required this.postYoga, required this.des, required this.url, required this.steps});
+      {required this.postYoga, required this.des, required this.url, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class YogaCard extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
           builder: ((context) =>
-              YogaTutorial(url: url, steps: steps, des: des)),
+              YogaTutorial(url: url, name: name, des: des)),
         ));
       },
       child: Container(
