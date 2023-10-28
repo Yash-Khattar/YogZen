@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:yogzen/global/color.dart";
 import "package:yogzen/screens/community/components/post_card.dart";
+import "package:yogzen/screens/community/yog_guru.dart";
 
 class CommunityScreen extends StatefulWidget {
   static const routeName = "/communityScreen";
@@ -68,7 +69,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Community",
+                  "Yoga Studio",
                   style: Theme.of(context).textTheme.displayLarge,
                 ),
 
@@ -88,15 +89,21 @@ class _CommunityScreenState extends State<CommunityScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const CircleAvatar(
-                                child: Icon(
-                                  Icons.person,
-                                  size: 40,
-                                  color: Colors.white54,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, YogGuru.routeName);
+                                },
+                                child: const CircleAvatar(
+                                  radius: 32,
+                                  backgroundColor: kdarkBlue,
+                                  child: Icon(
+                                    Icons.person,
+                                    size: 40,
+                                    color: Colors.white54,
+                                  ),
+                                  // backgroundImage: AssetImage('assets/images/avatar.png'),
                                 ),
-                                radius: 32,
-                                backgroundColor: kdarkBlue,
-                                // backgroundImage: AssetImage('assets/images/avatar.png'),
                               ),
                               const SizedBox(height: 8),
                               Text(yogGuruList[index]),
