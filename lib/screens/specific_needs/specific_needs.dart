@@ -122,7 +122,7 @@ class SpecificNeeds extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: klightBlue,
-      body: FutureBuilder<String>(
+      body: FutureBuilder<List<String>>(
       future: fetchYogaPose(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -130,7 +130,7 @@ class SpecificNeeds extends StatelessWidget {
         } else if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else {
-          return Center(child: Text('Yoga Pose Instructions: ${snapshot.data}'));
+          return Center(child: ListView.builder(itemBuilder: (context, index) => Text(snapshot.data![index]),itemCount: snapshot.data!.length),);
         }
       },
     )
