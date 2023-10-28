@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:yogzen/global/color.dart';
+import 'package:yogzen/global/yoga_data.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import '../../openai/yoga_api.dart';
 
 class YogaTutorial extends StatefulWidget {
   const YogaTutorial(
-      {super.key, required this.url, required this.steps, required this.des});
+      {super.key, required this.url, required this.name, required this.des});
   final String url;
-  final List steps;
+  final String name;
   final String des;
   @override
   State<YogaTutorial> createState() => _YogaTutorialState();
@@ -44,7 +47,7 @@ class _YogaTutorialState extends State<YogaTutorial> {
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 16, right: 16),
+                  padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -57,7 +60,7 @@ class _YogaTutorialState extends State<YogaTutorial> {
                           ),
                           const SizedBox(width: 12),
                           Text(
-                            widget.des,
+                            widget.name,
                             style: Theme.of(context).textTheme.headlineLarge,
                           ),
                         ],
@@ -88,6 +91,68 @@ class _YogaTutorialState extends State<YogaTutorial> {
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                       const SizedBox(height: 10),
+                      // ListView.builder(
+                      //   scrollDirection: Axis.vertical,
+                      //   physics: const NeverScrollableScrollPhysics(),
+                      //   itemBuilder: (context, index) {
+                      //     return Padding(
+                      //       padding: const EdgeInsets.symmetric(vertical: 6),
+                      //       child: ListTile(
+                      //         leading: Text(
+                      //           "${index + 1}",
+                      //           style:
+                      //               Theme.of(context).textTheme.headlineMedium,
+                      //         ),
+                      //         title: Text(
+                      //           widget.steps[index],
+                      //         ),
+                      //       ),
+                      //     );
+                      //   },
+                      //   itemCount: widget.steps.length,
+                      //   shrinkWrap: true,
+                      // ),
+                      if(data![widget.name] == null)
+                      FutureBuilder<List<String>>(
+                        future: fetchYogaPose(widget.name),
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return Center(child: CircularProgressIndicator());
+                          } else if (snapshot.hasError) {
+                            return Center(
+                                child: Text('Error: ${snapshot.error}'));
+                          } else {
+                            if(snapshot.data!= null){
+                              data![widget.name] = {"url" : widget.url, "steps" : snapshot.data};
+                            }
+                            return ListView.builder(
+                              scrollDirection: Axis.vertical,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 6),
+                                  child: ListTile(
+                                    leading: Text(
+                                      "${index + 1}",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineMedium,
+                                    ),
+                                    title: Text(
+                                      data![widget.name]!["steps"][index],
+                                    ),
+                                  ),
+                                );
+                              },
+                              itemCount: data![widget.name]!["steps"].length,
+                              shrinkWrap: true,
+                            );
+                          }
+                        },
+                      ),
+                      if(data![widget.name] != null)
                       ListView.builder(
                         scrollDirection: Axis.vertical,
                         physics: const NeverScrollableScrollPhysics(),
@@ -101,12 +166,12 @@ class _YogaTutorialState extends State<YogaTutorial> {
                                     Theme.of(context).textTheme.headlineMedium,
                               ),
                               title: Text(
-                                widget.steps[index],
+                                data![widget.name]!["steps"][index],
                               ),
                             ),
                           );
                         },
-                        itemCount: widget.steps.length,
+                        itemCount: data![widget.name]!["steps"].length,
                         shrinkWrap: true,
                       ),
                       const SizedBox(height: 10),
